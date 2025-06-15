@@ -34,7 +34,19 @@ def flush_input():
 
 def main():
     global repeat
-    with open('words.txt', 'r') as f:
+
+    while True:
+        try:
+            difficulty = int(input('> Choose a difficulty.\n> 1: Advanced\n> 2: Expert\n> '))
+            if difficulty == 1:
+                file = 'advanced.txt'
+            elif difficulty == 2:
+                file = 'expert.txt'
+            break
+        except:
+            pass
+
+    with open(file, 'r') as f:
         words = f.readlines()
         words = [word for word in words if not word.startswith('--') and word.replace('\n', '') != ''] # Remove comments and gaps
 
