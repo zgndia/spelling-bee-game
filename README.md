@@ -9,6 +9,8 @@
 > `py -3.12 -m pip install -r requirements.txt` if you have multiple python versions downloaded.
 
 ### If you have git and python 3.12 installed already;
+
+> If you want to try this method but don't have git installed, you can download it from [here](https://git-scm.com/downloads)
 > Run this standalone command in your terminal that lets you run the program without needing to do anything else,
 
 > `git clone https://github.com/zgndia/spelling-bee-game && cd spelling-bee-game && py -3.12 -m pip install -r requirements.txt && py -3.12 main.py`
