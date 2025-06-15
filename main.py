@@ -35,6 +35,8 @@ def flush_input():
 def main():
     global repeat
 
+    os.system('cls')
+
     while True:
         try:
             difficulty = int(input('> Choose a difficulty.\n> 1: Advanced\n> 2: Expert\n> '))
