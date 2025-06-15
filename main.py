@@ -61,7 +61,7 @@ def main():
                     continue
                 else:
                     break
-            start_lines = ['Ok, spell', 'Spell the word', 'Spell', 'Now spell the word']
+            start_lines = ['Can you spell', 'The next word is', 'Alright, spell', 'Your word is', 'Spell']
             text_to_speak = f'{random.choice(start_lines)}, {word}'
         else:
             repeat = False
@@ -99,4 +99,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
