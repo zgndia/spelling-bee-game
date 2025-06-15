@@ -10,8 +10,9 @@
 
 ### If you have git and python 3.12 installed already;
 
-> You can download python 3.12 from [here](https://www.python.org)
 > If you want to try this method but don't have git installed, you can download it from [here](https://git-scm.com/downloads)
+
+> You can download python 3.12 from [here](https://www.python.org)
 
 > Run this standalone command in your terminal that lets you run the program without needing to do anything else,
 
