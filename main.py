@@ -9,14 +9,19 @@ import random
 import time
 import msvcrt
 import sys
+import json
 
 # ─── SETTINGS ─────────────────────────────────────────────────────────────────
 
-# If True, only the word is spoken; if False, adds a prompt phrase.
 QUICK_MODE = True
-
-# Delay (seconds) between rounds in “normal” mode
 NORMAL_MODE_DELAY = 1.5
+WORDS_FOLDER = "words"
+WORDS_JSON = "words.json"
+DIFFICULTY_FILES = {
+    "Advanced": "advanced.txt",
+    "Expert": "expert.txt",
+    "Custom": "custom.txt"
+}
 
 # ─── TEXT‑TO‑SPEECH HANDLER ──────────────────────────────────────────────────
 
@@ -32,7 +37,6 @@ class TTS:
             data, sr = sf.read(temp_file)
             sd.play(data, samplerate=sr, blocking=True)
         except Exception as e:
-            # If TTS fails, just print the text
             print(f"[TTS ERROR: {e}] {text}")
         finally:
             try:
@@ -42,7 +46,6 @@ class TTS:
 
     @staticmethod
     def speak(text: str):
-        """Run the async TTS in its own event loop (so we can call from anywhere)."""
         asyncio.run(TTS._speak_async(text))
 
     @staticmethod
@@ -50,6 +53,30 @@ class TTS:
         t = threading.Thread(target=TTS.speak, args=(text,), daemon=True)
         t.start()
         return t
+
+# ─── WORD HANDLER ─────────────────────────────────────────────────────────────
+
+def generate_words_json():
+    words_data = {}
+    for difficulty, filename in DIFFICULTY_FILES.items():
+        full_path = os.path.join(WORDS_FOLDER, filename)
+        if os.path.isfile(full_path):
+            with open(full_path, encoding="utf-8") as f:
+                lines = [line.strip() for line in f if line.strip() and not line.startswith("--")]
+                words_data[difficulty] = lines
+        else:
+            print(f"⚠️ Missing file: {full_path}")
+            words_data[difficulty] = []
+    with open(WORDS_JSON, "w", encoding="utf-8") as f:
+        json.dump(words_data, f, ensure_ascii=False, indent=2)
+    print("✅ words.json created successfully.")
+
+def load_words_from_json(difficulty: str) -> list[str]:
+    if not os.path.isfile(WORDS_JSON):
+        generate_words_json()
+    with open(WORDS_JSON, encoding="utf-8") as f:
+        all_words = json.load(f)
+    return all_words.get(difficulty, [])
 
 # ─── WORD GAME ────────────────────────────────────────────────────────────────
 
@@ -60,78 +87,54 @@ class SpellingGame:
         self.current_word: str | None = None
         self.repeat_flag = False
 
-    def load_words(self, filename: str) -> bool:
-        """Load words from file, skipping blank lines and comments."""
-        if not os.path.isfile(filename):
-            print(f"❌ File not found: {filename}")
-            input("> Press Enter to continue...")
-            return False
-        with open(filename, encoding="utf-8") as f:
-            lines = [line.strip() for line in f]
-        self.words = [
-            w.replace("- ", "")
-            for w in lines
-            if w and not w.startswith("--")
-        ]
+    def load_words(self, difficulty: str) -> bool:
+        self.words = load_words_from_json(difficulty)
         if not self.words:
-            print("❌ No valid words in file.")
+            print(f"❌ No words found for '{difficulty}'")
             input("> Press Enter to continue...")
             return False
         self.guessed.clear()
         return True
 
     def flush_input(self):
-        """Clear any buffered keystrokes (Windows-only)."""
         while msvcrt.kbhit():
             msvcrt.getch()
 
     def pick_word(self):
-        """Choose a new word the user hasn’t guessed yet."""
         remaining = [w for w in self.words if w not in self.guessed]
         self.current_word = random.choice(remaining)
 
     def smart_delay(self, length: int) -> float:
-        """Dynamic delay based on word length."""
         return length / (4.5 + (length / 10))
 
     def play_round(self):
         os.system("cls")
-        # Completed all?
         if len(self.guessed) == len(self.words):
-            TTS.speak("Great job! You’ve spelled every word.")
             print("> You’ve guessed all the words! Returning to menu...")
+            TTS.speak("Great job! You’ve spelled every word.")
             time.sleep(2)
-            return False  # signal to exit loop
+            return False
 
-        # Decide the word to speak
         if self.repeat_flag and self.current_word:
             phrase = self.current_word
             self.repeat_flag = False
         else:
             self.pick_word()
-            if QUICK_MODE:
-                phrase = self.current_word
-            else:
-                starter = random.choice(
-                    ["Can you spell", "The next word is", "Alright, spell", "Your word is", "Spell"]
-                )
-                phrase = f"{starter}, {self.current_word}"
+            phrase = self.current_word if QUICK_MODE else f"{random.choice(['Can you spell', 'Spell', 'Your word is'])}, {self.current_word}"
 
         print(f"> Guessed: {len(self.guessed)}/{len(self.words)}")
         t = TTS.speak_in_thread(phrase)
-        t.join()  # wait for speech to finish
+        t.join()
 
         self.flush_input()
         start = time.time()
         answer = input("> ").strip()
         elapsed = time.time() - start
 
-        # Repeat request
         if answer.lower() in ("repeat", "r"):
             self.repeat_flag = True
             return True
 
-        # Check correctness
         if self.current_word and answer.lower() == self.current_word.lower():
             self.guessed.add(self.current_word)
             if not QUICK_MODE:
@@ -146,11 +149,10 @@ class SpellingGame:
             elif QUICK_MODE:
                 time.sleep(self.smart_delay(len(self.current_word or "")))
 
-        # Delay before next round
         if not QUICK_MODE:
             time.sleep(self.smart_delay(len(self.current_word or "")))
 
-        return True  # continue game
+        return True
 
     def run(self):
         while self.play_round():
@@ -173,25 +175,32 @@ def settings_menu():
 
 def play_menu():
     game = SpellingGame()
+    difficulties = list(DIFFICULTY_FILES.keys())
     while True:
         os.system("cls")
         print("===== PLAY =====")
-        print("1. Advanced")
-        print("2. Expert")
-        print("3. Back")
+        for i, diff in enumerate(difficulties, start=1):
+            print(f"{i}. {diff}")
+        print(f"{len(difficulties)+1}. Back")
         choice = input("> ").strip()
-        if choice in ("1", "2"):
-            filename = "advanced.txt" if choice == "1" else "expert.txt"
-            if game.load_words(filename):
-                game.run()
-        elif choice == "3":
-            break
+        if choice.isdigit():
+            idx = int(choice)
+            if 1 <= idx <= len(difficulties):
+                difficulty = difficulties[idx - 1]
+                if game.load_words(difficulty):
+                    game.run()
+            elif idx == len(difficulties) + 1:
+                break
+            else:
+                print("> Invalid choice.")
+                time.sleep(1)
         else:
-            print("> Invalid choice.")
+            print("> Invalid input.")
             time.sleep(1)
 
 def main():
     try:
+        generate_words_json()
         while True:
             os.system("cls")
             print("===== SPELLING BEE GAME =====")

@@ -17,3 +17,13 @@
 > Run this standalone command in your terminal that lets you run the program without needing to do anything else,
 
 > `git clone https://github.com/zgndia/spelling-bee-game && cd spelling-bee-game && py -3.12 -m pip install -r requirements.txt && py -3.12 main.py`
+
+### Customization
+
+> You can add your own words if you wish.
+
+> All you have to do is, edit the text files inside the 'words' folder.
+
+> I've only added the advanced and expert difficulties so far, but you could add more difficulties for yourself.
+
+> These difficulty levels might not include all the words or may not be up to date, so feel free to fork this project!
