@@ -1,5 +1,5 @@
--- You can add/remove words from here.
 -- The symbol '--' used in this text editor is used to display a comment.
+-- You can add/remove words from here.
 
 abacaxi
 abasia
@@ -24,18 +24,20 @@ bucolic
 cacophony
 calamitous
 calumny
-captious
+capoeira
 capricious
+captious
 cerulean
 chronological
 clandestine
-codicil
 coalescence
+codicil
 colloquialism
-commodore
 comeuppance
+commodore
 compunction
 consanguine
+counterintuitive
 culvert
 cyrillic
 defenestration
@@ -43,8 +45,8 @@ deleterious
 depilatory
 discombobulate
 dodecahedron
-eloquent
 elision
+eloquent
 extraterrestrial
 facsimile
 fastidious
@@ -57,9 +59,10 @@ handkerchief
 harpsichord
 heterozygous
 hierarchy
-homogeneous
 homeopathy
+homogeneous
 hypermetropia
+iconoclast
 incandescent
 indefatigable
 ingenious
@@ -69,7 +72,8 @@ kaleidoscope
 languid
 lexicography
 macabre
-malaproprism
+malapropism
+maliflous
 martyrdom
 mellifluous
 menagerie
@@ -96,10 +100,13 @@ pirouette
 pneumatic
 polemic
 polydactyly
+predecessor
+prestigious
 psychological
 puerile
 pugnacious
 querimony
+quixotry
 rambunctious
 rehabilitation
 reminiscence
@@ -108,12 +115,13 @@ sagacious
 sarcophagus
 semaphore
 sequacious
+sequoia
 simultaneous
 sovereignty
 subterranean
 supersede
-symbiosis
 syllepsis
+symbiosis
 syzygy
 tempestuous
 tetraphobia
