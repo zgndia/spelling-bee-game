@@ -1,43 +1,46 @@
-adrenocorticotropin, adrenocorticotrophin  
-anthropomorphization, anthropomorphisation  
-autothaumaturgist  
-antixerophthalmic  
-antidisestablishmentarianism  
-canaliculodacryocystorhinostomy  
+-- You can add/remove words from here.
+-- The symbol '--' used in this text editor is used to display a comment.
+
+adrenocorticotropin, adrenocorticotrophin
+anthropomorphization, anthropomorphisation
+autothaumaturgist
+antixerophthalmic
+antidisestablishmentarianism
+canaliculodacryocystorhinostomy
 chargoggagoggmanchauggagoggchaubunagungamaugg
-cholangiopancreatography  
-convolvulaceous  
-corticopontocerebellar  
-counterimmunoelectrophoresis  
-dehydrothiotoluidine  
-dextrodeorsumversion  
-encephalography  
-erythrocytapheresis  
-ferriprotoporphyrin  
-floccinaucinihilipilification  
-gastroenterologist  
-gegenstandstheorie  
-hexakosioihexekontahexaphobia  
-hippopotomonstrosesquippedaliophobia, hippopotomonstrosesquipedaliophobia  
-honorificabilitudinity  
-oligonucleotide  
-otorhinolaryngological  
-parallelogrammatic  
-photoplethysmography  
-psychoneuroendocrinological  
-psychoneuroimmunology  
-psychophysicotherapeutics  
-laryngotracheobronchitis  
-pneumoencephalography  
-polyphiloprogenitive  
-pneumonoultramicroscopicsilicovolcanoconiosis  
-pseudopseudohypoparathyroidism  
-pseudorhombicuboctahedron  
-radiometeorograph  
-sclerectoiridectomy  
-sphygmomanometer  
-stereoelectroencephalography  
-supercalifragilisticexpialidocious  
-spectrophotofluorometry  
-tonsillopharyngitis  
-ventriculocisternostomy  
+cholangiopancreatography
+convolvulaceous
+corticopontocerebellar
+counterimmunoelectrophoresis
+dehydrothiotoluidine
+dextrodeorsumversion
+encephalography
+erythrocytapheresis
+ferriprotoporphyrin
+floccinaucinihilipilification
+gastroenterologist
+gegenstandstheorie
+hexakosioihexekontahexaphobia
+hippopotomonstrosesquippedaliophobia, hippopotomonstrosesquipedaliophobia
+honorificabilitudinity
+oligonucleotide
+otorhinolaryngological
+parallelogrammatic
+photoplethysmography
+psychoneuroendocrinological
+psychoneuroimmunology
+psychophysicotherapeutics
+laryngotracheobronchitis
+pneumoencephalography
+polyphiloprogenitive
+pneumonoultramicroscopicsilicovolcanoconiosis
+pseudopseudohypoparathyroidism
+pseudorhombicuboctahedron
+radiometeorograph
+sclerectoiridectomy
+sphygmomanometer
+stereoelectroencephalography
+supercalifragilisticexpialidocious
+spectrophotofluorometry
+tonsillopharyngitis
+ventriculocisternostomy
