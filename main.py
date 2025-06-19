@@ -17,11 +17,6 @@ QUICK_MODE = True
 NORMAL_MODE_DELAY = 1.5
 WORDS_FOLDER = "words"
 WORDS_JSON = "words.json"
-DIFFICULTY_FILES = {
-    "Advanced": "advanced.txt",
-    "Expert": "expert.txt",
-    "Custom": "custom.txt"
-}
 
 # ─── TEXT‑TO‑SPEECH HANDLER ──────────────────────────────────────────────────
 
@@ -56,9 +51,20 @@ class TTS:
 
 # ─── WORD HANDLER ─────────────────────────────────────────────────────────────
 
+def get_difficulty_files() -> dict:
+    files = {}
+    if not os.path.isdir(WORDS_FOLDER):
+        os.makedirs(WORDS_FOLDER)
+    for filename in os.listdir(WORDS_FOLDER):
+        if filename.endswith(".txt"):
+            name = os.path.splitext(filename)[0].capitalize()
+            files[name] = filename
+    return files
+
 def generate_words_json():
     words_data = {}
-    for difficulty, filename in DIFFICULTY_FILES.items():
+    difficulty_files = get_difficulty_files()
+    for difficulty, filename in difficulty_files.items():
         full_path = os.path.join(WORDS_FOLDER, filename)
         if os.path.isfile(full_path):
             with open(full_path, encoding="utf-8") as f:
@@ -72,8 +78,6 @@ def generate_words_json():
     print("✅ words.json created successfully.")
 
 def load_words_from_json(difficulty: str) -> list[str]:
-    if not os.path.isfile(WORDS_JSON):
-        generate_words_json()
     with open(WORDS_JSON, encoding="utf-8") as f:
         all_words = json.load(f)
     return all_words.get(difficulty, [])
@@ -175,7 +179,8 @@ def settings_menu():
 
 def play_menu():
     game = SpellingGame()
-    difficulties = list(DIFFICULTY_FILES.keys())
+    with open(WORDS_JSON, encoding="utf-8") as f:
+        difficulties = list(json.load(f).keys())
     while True:
         os.system("cls")
         print("===== PLAY =====")
@@ -198,9 +203,11 @@ def play_menu():
             print("> Invalid input.")
             time.sleep(1)
 
+# ─── MAIN ─────────────────────────────────────────────────────────────────────
+
 def main():
     try:
-        generate_words_json()
+        generate_words_json()  # Always refresh on launch
         while True:
             os.system("cls")
             print("===== SPELLING BEE GAME =====")
