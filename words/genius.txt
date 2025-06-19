@@ -1,0 +1,76 @@
+-- You can add/remove words from here.
+-- The symbol '--' used in this text editor is used to display a comment.
+
+acquiesce  
+abdominothoracic  
+arthroereisis  
+anachronistic  
+antediluvian  
+acetaminophen  
+borborygmus  
+bourgeoisie  
+bourgeoisification  
+baccalaureate  
+batrachophobia  
+bogolanfini  
+countermajoritarianism  
+compartmentalization, compartmentalisation  
+contradistinguish  
+capoeira  
+dendrochronology  
+deoxyribonucleic  
+dichotomization, dichotomisation  
+entrepreneur  
+ethnomethodology  
+electrotelethermometer  
+flibbertigibbet  
+fossiliferous  
+geitonogamy  
+glyceraldehyde  
+gubernatorial  
+hieroglyphics  
+hemispherectomy  
+hypoparathyroidism  
+infinitesimal  
+incomprehensibility  
+inchoate  
+iconoclast  
+institutionalization, institutionalisation  
+infundibulum  
+jurisprudence  
+lepidopterology  
+mechanotransduction  
+metonymic  
+machiavellian  
+orthogeosyncline  
+paraphernalia  
+paroxysm  
+perspicacious  
+paradigm  
+plenipotentiary  
+pulchritudinous  
+pusillanimous  
+portmanteau  
+quasiautobiographical  
+quasquicentennial  
+quixotry  
+quindecasyllabic  
+quoddamodotative  
+spectrophotometer  
+subdermatoglyphic  
+sequoia  
+serendipity  
+sesquipedalian  
+soliloquy  
+supererogatory  
+superferromagnetism  
+susurration  
+subcompartmentalization, subcompartmentalisation  
+subpoena  
+transinstitutionalization, transinstitutionalisation  
+tintinnabulation  
+thalassophobia  
+utilitarianism  
+verisimilitude  
+worcestershire  
+xylotypographic  
