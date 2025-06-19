@@ -44,7 +44,7 @@ elaborate
 embarrassment
 embassy
 encore
-endeavor
+endeavor, endeavour
 epiphany
 epsilon
 erratic
@@ -54,7 +54,7 @@ excalibur
 expenditure
 exponential
 extravagant
-favorable
+favorable, favourable
 fictitious
 fjord
 flamboyant
@@ -89,7 +89,7 @@ microorganism
 misconception
 myopic
 necromancer
-neighboring
+neighboring, neighbouring
 negotiation
 nonplussed
 notorious

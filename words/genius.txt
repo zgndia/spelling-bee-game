@@ -1,4 +1,0 @@
--- The symbol '--' used in this text editor is used to display a comment.
--- You can add/remove words from here.
-
-metonymic

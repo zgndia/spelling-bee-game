@@ -20,8 +20,12 @@
 
 ### Customization
 
-> I've only added the advanced and expert difficulties so far, but you could add more difficulties for yourself.
+> I've only added the advanced and expert difficulties from the game so far, but you could add more difficulties for yourself.
 
 > All you have to do is, edit the text files or create a new txt file inside the 'words' folder.
 
 > These difficulty levels might not include all the words or may not be up to date, so feel free to fork this project!
+
+> If you want to include a homophone of a word, provide them in the same line, but split them with a comma;
+
+> `favorable, favourable`

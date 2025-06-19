@@ -8,13 +8,11 @@ import threading
 import random
 import time
 import msvcrt
-import sys
 import json
 
 # ─── SETTINGS ─────────────────────────────────────────────────────────────────
 
 QUICK_MODE = True
-NORMAL_MODE_DELAY = 1.5
 WORDS_FOLDER = "words"
 WORDS_JSON = "words.json"
 
@@ -67,9 +65,15 @@ def generate_words_json():
     for difficulty, filename in difficulty_files.items():
         full_path = os.path.join(WORDS_FOLDER, filename)
         if os.path.isfile(full_path):
+            entries = []
             with open(full_path, encoding="utf-8") as f:
-                lines = [line.strip() for line in f if line.strip() and not line.startswith("--")]
-                words_data[difficulty] = lines
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("--"):
+                        aliases = [w.strip() for w in line.split(",") if w.strip()]
+                        if aliases:
+                            entries.append(aliases)
+            words_data[difficulty] = entries
         else:
             print(f"⚠️ Missing file: {full_path}")
             words_data[difficulty] = []
@@ -77,7 +81,7 @@ def generate_words_json():
         json.dump(words_data, f, ensure_ascii=False, indent=2)
     print("✅ words.json created successfully.")
 
-def load_words_from_json(difficulty: str) -> list[str]:
+def load_words_from_json(difficulty: str) -> list[list[str]]:
     with open(WORDS_JSON, encoding="utf-8") as f:
         all_words = json.load(f)
     return all_words.get(difficulty, [])
@@ -86,9 +90,9 @@ def load_words_from_json(difficulty: str) -> list[str]:
 
 class SpellingGame:
     def __init__(self):
-        self.words: list[str] = []
+        self.words: list[list[str]] = []
         self.guessed: set[str] = set()
-        self.current_word: str | None = None
+        self.current_word: list[str] | None = None
         self.repeat_flag = False
 
     def load_words(self, difficulty: str) -> bool:
@@ -105,7 +109,7 @@ class SpellingGame:
             msvcrt.getch()
 
     def pick_word(self):
-        remaining = [w for w in self.words if w not in self.guessed]
+        remaining = [w for w in self.words if tuple(w) not in self.guessed]
         self.current_word = random.choice(remaining)
 
     def smart_delay(self, length: int) -> float:
@@ -120,11 +124,11 @@ class SpellingGame:
             return False
 
         if self.repeat_flag and self.current_word:
-            phrase = self.current_word
+            phrase = self.current_word[0]
             self.repeat_flag = False
         else:
             self.pick_word()
-            phrase = self.current_word if QUICK_MODE else f"{random.choice(['Can you spell', 'Spell', 'Your word is'])}, {self.current_word}"
+            phrase = self.current_word[0] if QUICK_MODE else f"{random.choice(['Can you spell', 'Spell', 'Your word is'])}, {self.current_word[0]}"
 
         print(f"> Guessed: {len(self.guessed)}/{len(self.words)}")
         t = TTS.speak_in_thread(phrase)
@@ -139,22 +143,22 @@ class SpellingGame:
             self.repeat_flag = True
             return True
 
-        if self.current_word and answer.lower() == self.current_word.lower():
-            self.guessed.add(self.current_word)
+        if self.current_word and answer.lower() in [w.lower() for w in self.current_word]:
+            self.guessed.add(tuple(self.current_word))
             if not QUICK_MODE:
-                print(f"> Correct! It was '{self.current_word}'.")
+                print(f"> Correct! It was '{self.current_word[0]}'.")
                 wpm = (len(answer) / 5) / (elapsed / 60) if elapsed > 0 else 0
                 print(f"> WPM: {wpm:.2f}")
                 TTS.speak_in_thread("Correct!")
         else:
-            print(f"> The word was '{self.current_word}'.")
+            print(f"> The word was '{self.current_word[0]}'.")
             if not QUICK_MODE:
                 TTS.speak_in_thread("Incorrect!")
             elif QUICK_MODE:
-                time.sleep(self.smart_delay(len(self.current_word or "")))
+                time.sleep(self.smart_delay(len(self.current_word[0])))
 
         if not QUICK_MODE:
-            time.sleep(self.smart_delay(len(self.current_word or "")))
+            time.sleep(self.smart_delay(len(self.current_word[0])))
 
         return True
 

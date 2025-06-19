@@ -1,5 +1,5 @@
--- The symbol '--' used in this text editor is used to display a comment.
 -- You can add/remove words from here.
+-- The symbol '--' used in this text editor is used to display a comment.
 
 abacaxi
 abasia
@@ -7,7 +7,7 @@ accommodate
 acculturate
 aegis
 aforementioned
-aggrandise
+aggrandize, aggrandise
 agoraphobia
 ambidextrous
 ambiguous
@@ -87,7 +87,7 @@ martyrdom
 mellifluous
 menagerie
 milieu
-miniscule
+minuscule, miniscule
 miscellaneous
 monochromatic
 monosyllabic
