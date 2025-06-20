@@ -130,7 +130,8 @@
       "encore"
     ],
     [
-      "endeavor"
+      "endeavor",
+      "endeavour"
     ],
     [
       "epiphany"
@@ -160,7 +161,8 @@
       "extravagant"
     ],
     [
-      "favorable"
+      "favorable",
+      "favourable"
     ],
     [
       "fictitious"
@@ -265,7 +267,8 @@
       "necromancer"
     ],
     [
-      "neighboring"
+      "neighboring",
+      "neighbouring"
     ],
     [
       "negotiation"
@@ -472,17 +475,6 @@
       "worthwhile"
     ]
   ],
-  "Custom": [
-    [
-      "chargoggagoggmanchauggagoggchaubunagungamaugg"
-    ],
-    [
-      "pseudopseudohypoparathyroidism"
-    ],
-    [
-      "hexakosioihexekontahexaphobia"
-    ]
-  ],
   "Expert": [
     [
       "abacaxi"
@@ -503,6 +495,7 @@
       "aforementioned"
     ],
     [
+      "aggrandize",
       "aggrandise"
     ],
     [
@@ -743,6 +736,7 @@
       "milieu"
     ],
     [
+      "minuscule",
       "miniscule"
     ],
     [
@@ -931,14 +925,362 @@
   ],
   "Genius": [
     [
+      "acquiesce"
+    ],
+    [
+      "abdominothoracic"
+    ],
+    [
+      "arthroereisis"
+    ],
+    [
+      "anachronistic"
+    ],
+    [
+      "antediluvian"
+    ],
+    [
+      "acetaminophen"
+    ],
+    [
+      "borborygmus"
+    ],
+    [
+      "bourgeoisie"
+    ],
+    [
+      "bourgeoisification"
+    ],
+    [
+      "baccalaureate"
+    ],
+    [
+      "batrachophobia"
+    ],
+    [
+      "bogolanfini"
+    ],
+    [
+      "countermajoritarianism"
+    ],
+    [
+      "compartmentalization",
+      "compartmentalisation"
+    ],
+    [
+      "contradistinguish"
+    ],
+    [
+      "capoeira"
+    ],
+    [
+      "dendrochronology"
+    ],
+    [
+      "deoxyribonucleic"
+    ],
+    [
+      "dichotomization",
+      "dichotomisation"
+    ],
+    [
+      "entrepreneur"
+    ],
+    [
+      "ethnomethodology"
+    ],
+    [
+      "electrotelethermometer"
+    ],
+    [
+      "flibbertigibbet"
+    ],
+    [
+      "fossiliferous"
+    ],
+    [
+      "geitonogamy"
+    ],
+    [
+      "glyceraldehyde"
+    ],
+    [
+      "gubernatorial"
+    ],
+    [
+      "hieroglyphics"
+    ],
+    [
+      "hemispherectomy"
+    ],
+    [
+      "hypoparathyroidism"
+    ],
+    [
+      "infinitesimal"
+    ],
+    [
+      "incomprehensibility"
+    ],
+    [
+      "inchoate"
+    ],
+    [
+      "iconoclast"
+    ],
+    [
+      "institutionalization",
+      "institutionalisation"
+    ],
+    [
+      "infundibulum"
+    ],
+    [
+      "jurisprudence"
+    ],
+    [
+      "lepidopterology"
+    ],
+    [
+      "mechanotransduction"
+    ],
+    [
       "metonymic"
+    ],
+    [
+      "machiavellian"
+    ],
+    [
+      "orthogeosyncline"
+    ],
+    [
+      "paraphernalia"
+    ],
+    [
+      "paroxysm"
+    ],
+    [
+      "perspicacious"
+    ],
+    [
+      "paradigm"
+    ],
+    [
+      "plenipotentiary"
+    ],
+    [
+      "pulchritudinous"
+    ],
+    [
+      "pusillanimous"
+    ],
+    [
+      "portmanteau"
+    ],
+    [
+      "quasiautobiographical"
+    ],
+    [
+      "quasquicentennial"
+    ],
+    [
+      "quixotry"
+    ],
+    [
+      "quindecasyllabic"
+    ],
+    [
+      "quoddamodotative"
+    ],
+    [
+      "spectrophotometer"
+    ],
+    [
+      "subdermatoglyphic"
+    ],
+    [
+      "sequoia"
+    ],
+    [
+      "serendipity"
+    ],
+    [
+      "sesquipedalian"
+    ],
+    [
+      "soliloquy"
+    ],
+    [
+      "supererogatory"
+    ],
+    [
+      "superferromagnetism"
+    ],
+    [
+      "susurration"
+    ],
+    [
+      "subcompartmentalization",
+      "subcompartmentalisation"
+    ],
+    [
+      "subpoena"
+    ],
+    [
+      "transinstitutionalization",
+      "transinstitutionalisation"
+    ],
+    [
+      "tintinnabulation"
+    ],
+    [
+      "thalassophobia"
+    ],
+    [
+      "utilitarianism"
+    ],
+    [
+      "verisimilitude"
+    ],
+    [
+      "worcestershire"
+    ],
+    [
+      "xylotypographic"
     ]
   ],
-  "Test": [
+  "Master": [
     [
-      "favorable",
-      "favourable",
-      "test"
+      "adrenocorticotropin",
+      "adrenocorticotrophin"
+    ],
+    [
+      "anthropomorphization",
+      "anthropomorphisation"
+    ],
+    [
+      "autothaumaturgist"
+    ],
+    [
+      "antixerophthalmic"
+    ],
+    [
+      "antidisestablishmentarianism"
+    ],
+    [
+      "canaliculodacryocystorhinostomy"
+    ],
+    [
+      "chargoggagoggmanchauggagoggchaubunagungamaugg"
+    ],
+    [
+      "cholangiopancreatography"
+    ],
+    [
+      "convolvulaceous"
+    ],
+    [
+      "corticopontocerebellar"
+    ],
+    [
+      "counterimmunoelectrophoresis"
+    ],
+    [
+      "dehydrothiotoluidine"
+    ],
+    [
+      "dextrodeorsumversion"
+    ],
+    [
+      "encephalography"
+    ],
+    [
+      "erythrocytapheresis"
+    ],
+    [
+      "ferriprotoporphyrin"
+    ],
+    [
+      "floccinaucinihilipilification"
+    ],
+    [
+      "gastroenterologist"
+    ],
+    [
+      "gegenstandstheorie"
+    ],
+    [
+      "hexakosioihexekontahexaphobia"
+    ],
+    [
+      "hippopotomonstrosesquippedaliophobia",
+      "hippopotomonstrosesquipedaliophobia"
+    ],
+    [
+      "honorificabilitudinity"
+    ],
+    [
+      "oligonucleotide"
+    ],
+    [
+      "otorhinolaryngological"
+    ],
+    [
+      "parallelogrammatic"
+    ],
+    [
+      "photoplethysmography"
+    ],
+    [
+      "psychoneuroendocrinological"
+    ],
+    [
+      "psychoneuroimmunology"
+    ],
+    [
+      "psychophysicotherapeutics"
+    ],
+    [
+      "laryngotracheobronchitis"
+    ],
+    [
+      "pneumoencephalography"
+    ],
+    [
+      "polyphiloprogenitive"
+    ],
+    [
+      "pneumonoultramicroscopicsilicovolcanoconiosis"
+    ],
+    [
+      "pseudopseudohypoparathyroidism"
+    ],
+    [
+      "pseudorhombicuboctahedron"
+    ],
+    [
+      "radiometeorograph"
+    ],
+    [
+      "sclerectoiridectomy"
+    ],
+    [
+      "sphygmomanometer"
+    ],
+    [
+      "stereoelectroencephalography"
+    ],
+    [
+      "supercalifragilisticexpialidocious"
+    ],
+    [
+      "spectrophotofluorometry"
+    ],
+    [
+      "tonsillopharyngitis"
+    ],
+    [
+      "ventriculocisternostomy"
     ]
   ]
 }
