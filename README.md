@@ -27,3 +27,7 @@
 > If you want to include a homophone of a word, provide them in the same line, but split them with a comma;
 
 > `favorable, favourable`
+
+### If you're a Spelling Bee Admin/Developer;
+
+> This project wasn’t intended to give people unfair advantages, such as through scripting. I completely distance myself from such behavior. If you have any concerns about the project, feel free to contact me on Discord: @zgn.
